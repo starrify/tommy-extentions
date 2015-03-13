@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+
+    "name": "k101store Auto Checkout",
+    "description": "Automatically adds a product to shopping cart and checks out for k101store.com",
+    "version": "0.1",
+    "permissions": [
+        "storage"
+    ],
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://www.k101store.com/*/products/*",
+                "http://www.k101store.com/cart"
+            ],
+            "js": ["k101store.js"],
+            "run_at": "document_end"
+        }
+    ]
+}
