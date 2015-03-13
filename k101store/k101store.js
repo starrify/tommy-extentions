@@ -3,7 +3,7 @@ function _process_product_page() {
         size_found = false;
         size_nodes = document.querySelectorAll('select#product-select option');
         for (i = 0; i < size_nodes.length; i++) {
-            this_size = size_nodes[i].textContent.split(' - ')[0];
+            this_size = size_nodes[i].textContent.split(' - ')[0].replace(/^\s+|\s+$/g, '');
             if (this_size == items.desired_size) {
                 size_found = true;
                 document.querySelector('select#product-select').value = size_nodes[i].value;
@@ -22,7 +22,7 @@ function _process_cart_page() {
 function _k101store_main() {
     chrome.storage.local.get('extension_state', function(items) {
         if (items.extension_state == 'started') {
-            if (document.URL.search('http://www.k101store.com/.*/products/.*') != -1)
+            if (document.URL.search('.*/products/.*') != -1)
                 _process_product_page();
             if (document.URL == 'http://www.k101store.com/cart')
                 _process_cart_page();

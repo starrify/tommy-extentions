@@ -12,10 +12,7 @@
     },
     "content_scripts": [
         {
-            "matches": [
-                "http://www.k101store.com/*/products/*",
-                "http://www.k101store.com/cart"
-            ],
+            "matches": ["http://www.k101store.com/*"],
             "js": ["k101store.js"],
             "run_at": "document_end"
         }

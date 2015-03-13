@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         state_btn = document.getElementById('change-state');
         chrome.storage.local.set({
             'extension_state': state_btn.getAttribute('next-state'),
-            'desired_size': document.getElementById('desired-size').value,
+            'desired_size': document.getElementById('desired-size').value.replace(/^\s+|\s+$/g, ''),
         });
         update_state();
     });
