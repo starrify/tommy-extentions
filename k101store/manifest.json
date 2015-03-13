@@ -3,7 +3,7 @@
 
     "name": "k101store Auto Checkout",
     "description": "Automatically adds a product to shopping cart and checks out for k101store.com",
-    "version": "0.1",
+    "version": "0.2",
     "permissions": [
         "storage"
     ],
