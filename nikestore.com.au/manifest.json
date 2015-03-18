@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+
+    "name": "Nikestore.com.au Auto Checkout",
+    "description": "Automatically adds a product to shopping cart and checks out for nike.com.au",
+    "version": "0.1",
+    "permissions": [
+        "storage"
+    ],
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://www.nike.com/au/*",
+                "http://www.nikestore.com.au/*"
+            ],
+            "js": ["nike.com.au.js"],
+            "run_at": "document_end"
+        }
+    ]
+}
